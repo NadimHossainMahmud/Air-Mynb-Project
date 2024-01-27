@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIrMynb</title>
+  </head>
+  <body>
+    <h2>Add a new Listings</h2>
+    <form method="post" action="/listings">
+      <input placeholder="Enter  title" name="listing[title]" type="text" />
+      <br />
+      <br />
+      <textarea
+        placeholder="Enter description"
+        name="listing[description]"
+      ></textarea>
+      <br />
+      <br />
+      <input
+        placeholder="Enter price"
+        name="listing[price]"
+        type="text"
+      /><br /><br />
+      <input
+        placeholder="Enter location"
+        name="listing[location]"
+        type="text"
+      /><br /><br />
+      <input
+        placeholder="Enter image"
+        name="listing[image]"
+        type="text"
+      /><br /><br />
+      <input
+        placeholder="Enter country"
+        name="listing[country]"
+        type="text"
+      /><br /><br />
+      <button>Add</button>
+    </form>
+  </body>
+</html>
