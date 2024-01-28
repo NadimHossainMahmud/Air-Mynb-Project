@@ -26,7 +26,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-//Home route
+// //Home route
 app.get("/", (req, res) => {
   res.send("cool");
 });
