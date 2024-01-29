@@ -1,14 +1,11 @@
-
-const sampleListing =
-
-[
+const sampleListing = [
   {
     title: "Modern Laptop",
     description: "Powerful laptop for all your computing needs",
     image: "",
     price: 899.99,
     location: "Tech Plaza",
-    country: "United States"
+    country: "United States",
   },
   {
     title: "Vintage Camera",
@@ -16,7 +13,7 @@ const sampleListing =
     image: "",
     price: 299.95,
     location: "Shutter Street",
-    country: "France"
+    country: "France",
   },
   {
     title: "Gourmet Coffee Beans",
@@ -24,15 +21,15 @@ const sampleListing =
     image: "",
     price: 19.99,
     location: "Bean Haven",
-    country: "Brazil"
+    country: "Brazil",
   },
   {
     title: "Smartphone X",
     description: "Latest smartphone with advanced features",
     image: "",
-    price: 749.00,
+    price: 749.0,
     location: "Tech Junction",
-    country: "Japan"
+    country: "Japan",
   },
   {
     title: "Fitness Tracker",
@@ -40,15 +37,15 @@ const sampleListing =
     image: "",
     price: 69.99,
     location: "Health Haven",
-    country: "Australia"
+    country: "Australia",
   },
   {
     title: "Designer Sunglasses",
     description: "Stylish sunglasses for a trendy look",
     image: "",
-    price: 129.50,
+    price: 129.5,
     location: "Fashion Street",
-    country: "Italy"
+    country: "Italy",
   },
   {
     title: "Home Theater System",
@@ -56,15 +53,15 @@ const sampleListing =
     image: "",
     price: 549.95,
     location: "Entertainment Hub",
-    country: "Canada"
+    country: "Canada",
   },
   {
     title: "Handcrafted Jewelry",
     description: "Unique jewelry pieces for special occasions",
     image: "",
-    price: 299.00,
+    price: 299.0,
     location: "Artisan Alley",
-    country: "Spain"
+    country: "Spain",
   },
   {
     title: "Wireless Gaming Mouse",
@@ -72,7 +69,7 @@ const sampleListing =
     image: "",
     price: 49.99,
     location: "Game Central",
-    country: "South Korea"
+    country: "South Korea",
   },
   {
     title: "Vegetarian Cookbook",
@@ -80,7 +77,7 @@ const sampleListing =
     image: "",
     price: 24.95,
     location: "Culinary Corner",
-    country: "India"
+    country: "India",
   },
   {
     title: "Hiking Backpack",
@@ -88,31 +85,31 @@ const sampleListing =
     image: "",
     price: 79.99,
     location: "Adventure Gear",
-    country: "New Zealand"
+    country: "New Zealand",
   },
   {
     title: "Smart Thermostat",
     description: "Control your home's temperature intelligently",
     image: "",
-    price: 129.00,
+    price: 129.0,
     location: "Climate Control",
-    country: "Sweden"
+    country: "Sweden",
   },
   {
     title: "Bluetooth Earbuds",
     description: "Wireless earbuds for on-the-go music",
     image: "",
-    price: 89.50,
+    price: 89.5,
     location: "Audio Oasis",
-    country: "United Kingdom"
+    country: "United Kingdom",
   },
   {
     title: "Sculpture Artwork",
     description: "Unique sculpture for art enthusiasts",
     image: "",
-    price: 399.00,
+    price: 399.0,
     location: "Art Gallery Street",
-    country: "Mexico"
+    country: "Mexico",
   },
   {
     title: "Portable Blender",
@@ -120,7 +117,7 @@ const sampleListing =
     image: "",
     price: 34.99,
     location: "Health Oasis",
-    country: "Netherlands"
+    country: "Netherlands",
   },
   {
     title: "Antique Pocket Watch",
@@ -128,15 +125,15 @@ const sampleListing =
     image: "",
     price: 199.95,
     location: "Timeless Treasures",
-    country: "Switzerland"
+    country: "Switzerland",
   },
   {
     title: "Digital Sketchpad",
     description: "Express your creativity with digital art",
     image: "",
-    price: 149.00,
+    price: 149.0,
     location: "Art Innovation",
-    country: "China"
+    country: "China",
   },
   {
     title: "Camping Tent",
@@ -144,23 +141,23 @@ const sampleListing =
     image: "",
     price: 149.99,
     location: "Outdoor Haven",
-    country: "Argentina"
+    country: "Argentina",
   },
   {
     title: "Travel Backpack",
     description: "Versatile backpack for travel enthusiasts",
     image: "",
-    price: 129.50,
+    price: 129.5,
     location: "Wanderlust Corner",
-    country: "South Africa"
+    country: "South Africa",
   },
   {
     title: "Robot Vacuum Cleaner",
     description: "Effortless cleaning with smart technology",
     image: "",
-    price: 299.00,
+    price: 299.0,
     location: "Smart Home Avenue",
-    country: "Germany"
+    country: "Germany",
   },
   {
     title: "Yoga Mat Set",
@@ -168,7 +165,7 @@ const sampleListing =
     image: "",
     price: 49.95,
     location: "Wellness Plaza",
-    country: "Australia"
+    country: "Australia",
   },
   {
     title: "Wireless Charging Pad",
@@ -176,7 +173,7 @@ const sampleListing =
     image: "",
     price: 29.99,
     location: "Tech Essentials",
-    country: "United States"
+    country: "United States",
   },
   {
     title: "Fishing Rod and Reel Combo",
@@ -184,15 +181,15 @@ const sampleListing =
     image: "",
     price: 79.95,
     location: "Angler's Paradise",
-    country: "Canada"
+    country: "Canada",
   },
   {
     title: "Leather Wallet",
     description: "Classic wallet for a sophisticated look",
     image: "",
-    price: 49.50,
+    price: 49.5,
     location: "Fashion Avenue",
-    country: "Italy"
+    country: "Italy",
   },
   {
     title: "Smart LED Bulbs",
@@ -200,15 +197,15 @@ const sampleListing =
     image: "",
     price: 19.99,
     location: "Smart Living Corner",
-    country: "Netherlands"
+    country: "Netherlands",
   },
   {
     title: "Drones for Beginners",
     description: "Explore the skies with easy-to-use drones",
     image: "",
-    price: 149.00,
+    price: 149.0,
     location: "Drone Haven",
-    country: "New Zealand"
+    country: "New Zealand",
   },
   {
     title: "Solar-Powered Charger",
@@ -216,7 +213,7 @@ const sampleListing =
     image: "",
     price: 39.99,
     location: "Green Tech Square",
-    country: "Brazil"
+    country: "Brazil",
   },
   {
     title: "Smart Doorbell",
@@ -224,7 +221,7 @@ const sampleListing =
     image: "",
     price: 129.99,
     location: "Home Security Zone",
-    country: "United States"
+    country: "United States",
   },
   {
     title: "Vintage Vinyl Records",
@@ -232,17 +229,24 @@ const sampleListing =
     image: "",
     price: 39.95,
     location: "Music Nostalgia",
-    country: "United Kingdom"
+    country: "United Kingdom",
   },
   {
     title: "Electric Scooter",
     description: "Efficient and eco-friendly transportation solution",
     image: "",
-    price: 299.00,
+    price: 299.0,
     location: "Eco-Mobility Avenue",
-    country:"United Kingdom"
-  }
-]
+    country: "United Kingdom",
+  },
+  {
+    title: "Electric Scooter",
+    description: "Efficient and eco-friendly transportation solution",
+    image: "",
+    price: 400,
+    location: "Eco-Mobility Avenue",
+    country: "United Kingdom",
+  },
+];
 
-
-module.exports = {data: sampleListing};
+module.exports = { data: sampleListing };
