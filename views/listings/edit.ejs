@@ -2,7 +2,12 @@
 <div class="row mt-5">
   <div class="col-8 offset-2">
     <h2>Edit your Listings</h2>
-    <form method="POST" action="/listings/<%= listing.id%>?_method=PUT">
+    <form
+      method="POST"
+      action="/listings/<%= listing.id%>?_method=PUT"
+      class="needs-validation"
+      novalidate
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -10,14 +15,17 @@
           value="<%= listing.title%>"
           type="text"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Enter a title</div>
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">description</label>
-        <textarea name="listing[description]" class="form-control">
+        <textarea name="listing[description]" class="form-control" required>
       <%= listing.description%></textarea
         >
+        <div class="invalid-feedback">Enter a description</div>
       </div>
 
       <div class="row">
@@ -28,7 +36,9 @@
             name="listing[price]"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Enter a valid price</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -38,7 +48,9 @@
             name="listing[country]"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Enter a country</div>
         </div>
       </div>
 
@@ -49,7 +61,9 @@
           name="listing[location]"
           type="text"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Enter a location</div>
       </div>
 
       <div class="mb-3">
@@ -59,10 +73,13 @@
           name="listing[image]"
           type="text"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Enter an Image</div>
       </div>
 
       <button class="btn btn-dark">Edit</button>
     </form>
   </div>
 </div>
+<script src="/javascript/script.js"></script>
