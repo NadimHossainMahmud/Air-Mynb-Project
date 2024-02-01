@@ -93,3 +93,30 @@ body {
 .add-btn{
   border:none !important;
 }
+
+/* show card and edit */
+.editedContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editCard{
+  margin-top: 30px;
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.editCard-img-top{
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.editCard-body{
+  padding: 0 !important;
+}
+
+.editCard-text{
+  font-weight: 400 !important;
+}

@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const expressError = require("./utils/expressError");
+const { listingSchema } = require("./schema.js");
 
 //connect to DB
 const mongo_url = "mongodb://127.0.0.1:27017/airmynb";
@@ -32,6 +33,17 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.get("/", (req, res) => {
   res.send("cool");
 });
+
+const validateListing = (req, res, next) => {
+  let { error } = listingSchema.validate(req.body);
+
+  if (error) {
+    let errorMsg = error.details.map((el) => el.message).join(",");
+    throw new expressError(400, errorMsg);
+  } else {
+    next();
+  }
+};
 
 // index route
 app.get(
@@ -60,10 +72,8 @@ app.get(
 //create route
 app.post(
   "/listings",
+  validateListing,
   wrapAsync(async (req, res, next) => {
-    if (!req.body.listing) {
-      throw new expressError(400, "send valid data for listing");
-    }
     const newListing = new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
@@ -83,10 +93,8 @@ app.get(
 //update route
 app.put(
   "/listings/:id",
+  validateListing,
   wrapAsync(async (req, res) => {
-    if (!req.body.listing) {
-      throw new expressError(400, "send valid data for listing");
-    }
     let { id } = req.params;
     await Listing.findByIdAndUpdate(id, { ...req.body.listing });
     res.redirect(`/listings/${id}`);
