@@ -7,7 +7,8 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const expressError = require("./utils/expressError");
-const { listingSchema } = require("./schema.js");
+const { listingSchema, reviewSchema } = require("./schema.js");
+const Review = require("./models/review.js");
 
 //connect to DB
 const mongo_url = "mongodb://127.0.0.1:27017/airmynb";
@@ -37,6 +38,16 @@ app.get("/", (req, res) => {
 const validateListing = (req, res, next) => {
   let { error } = listingSchema.validate(req.body);
 
+  if (error) {
+    let errorMsg = error.details.map((el) => el.message).join(",");
+    throw new expressError(400, errorMsg);
+  } else {
+    next();
+  }
+};
+
+const validateReview = (req, res, next) => {
+  let { error } = reviewSchema.validate(req.body);
   if (error) {
     let errorMsg = error.details.map((el) => el.message).join(",");
     throw new expressError(400, errorMsg);
@@ -109,6 +120,25 @@ app.delete(
     let deletedListing = await Listing.findByIdAndDelete(id);
     console.log(deletedListing);
     res.redirect("/listings");
+  })
+);
+
+// Reviews
+// Post Route
+
+app.post(
+  "/listings/:id/reviews",
+  validateReview,
+  wrapAsync(async (req, res) => {
+    let listing = await Listing.findById(req.params.id);
+    let neweReview = new Review(req.body.review);
+
+    listing.reviews.push(neweReview);
+
+    await neweReview.save();
+    await listing.save();
+
+    res.redirect(`/listings/${listing._id}`);
   })
 );
 

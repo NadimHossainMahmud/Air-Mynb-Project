@@ -95,7 +95,7 @@ body {
 }
 
 /* show card and edit */
-.editedContainer{
+/* .editedContainer{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,4 +119,4 @@ body {
 
 .editCard-text{
   font-weight: 400 !important;
-}
+} */
