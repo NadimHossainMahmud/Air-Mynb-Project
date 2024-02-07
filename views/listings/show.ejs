@@ -4,7 +4,7 @@
   <div class="col-8 offset-3">
     <h3><%= listing.title%></h3>
   </div>
-  <div class="card col-6 offset-3 show-card">
+  <div class="card col-6 offset-3 show-card listing-card">
     <img
       src="<%= listing.image%>"
       class="card-img-top"
@@ -18,7 +18,7 @@
         <%= listing.location%><br />
         <%= listing.country%><br />
       </p>
-      <div class="col-8">
+      <div class="col-6">
         <div>
           <a href="/listings/<%= listing._id%>/edit" class="btn btn-primary"
             >Edit this listing</a
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-12">
       <hr />
       <h4>Leave a review</h4>
       <form
@@ -68,9 +68,31 @@
           <div class="invalid-feedback">
             Please add some comments for review
           </div>
+          <br />
           <button class="btn btn-outline-dark">Submit</button>
         </div>
       </form>
+      <hr />
+
+      <p><b>All review</b></p>
+      <div class="row">
+        <% for(review of listing.reviews){ %>
+        <div class="card col-5 ms-3 mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Jane</h5>
+            <p class="card-text"><%= review.comment %></p>
+            <p class="card-text"><%= review.rating%></p>
+          </div>
+          <form
+            class="mb-3"
+            method="POST"
+            action="/listings/<%= listing._id%>/reviews/<%= review._id%>?_method=DELETE"
+          >
+            <button class="btn btn-sm btn-dark">Delete</button>
+          </form>
+        </div>
+        <%}%>
+      </div>
     </div>
   </div>
 </div>
